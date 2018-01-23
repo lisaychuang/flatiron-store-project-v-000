@@ -10,8 +10,8 @@ class Cart < ActiveRecord::Base
 
     def add_item(item_id)
         # list all line_items in a cart
-        line_items = self.line_items
         # check if item_id is in this array
+        line_items = self.line_items        
         find_item = line_items.select{|item| item.item_id == item_id}
         # if line_items contains an item with matching item_id 
             #update quantity of this item
@@ -19,9 +19,9 @@ class Cart < ActiveRecord::Base
             # create a new line_item with item_id
         
         if find_item.length == 0
-            self.line_items.create(item_id: item_id)
+            self.line_items.new(item_id: item_id)
         else
-            find_item[0].quantity +=1
+            find_item.first
         end
 
     end
