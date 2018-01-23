@@ -46,6 +46,7 @@ If logged in, each item should have an "Add to Cart" button
 When the user adds an item to the cart it should show them their current cart
 
 # CART/CHECKOUT
+Creates a current_cart when adding first item
 Users should be able to checkout from their cart
 This shows them their cart afterwards, and deducts inventory from each item
 Prices should be in the $XX.XX format

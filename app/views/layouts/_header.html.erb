@@ -1,8 +1,8 @@
 <nav class="">
     <ul>
          <%= link_to "Store Home", store_path %> 
-        <% if !!@cart %>
-          <li> <%= link_to "Cart", cart_path(current_cart) %></li>
+        <% if current_user && current_user.current_cart %>
+          <li> <%= link_to "Cart", cart_path(current_user.current_cart) %></li>
         <% end %>
 
         <% if user_signed_in? %>
