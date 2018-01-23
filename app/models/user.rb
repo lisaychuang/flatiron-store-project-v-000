@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   has_many :carts
 
   def current_cart
+    self.carts.last
   end
 end

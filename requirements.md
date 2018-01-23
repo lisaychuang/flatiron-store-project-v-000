@@ -5,7 +5,7 @@ X belongs to a user
 X has many line_items
 X has many items through line_items
 X #total: total price of items in cart
-- #add_item(item.id): updates existing line_item instead of making new when adding same item, or creates a new unsaved line_item 
+X #add_item(item.id): updates existing line_item instead of making new when adding same item, or creates a new unsaved line_item 
 
 ## CATEGORY
 X has many items
@@ -14,7 +14,7 @@ X has many items
 X title, inventory, price, category_id
 X belongs to a category
 X has many line_items consolidated by line_item quantity
-- #available_items: only returns items with inventory > 0
+X #available_items: only returns items with inventory > 0
 
 ## LineItem
 X belongs to a cart
