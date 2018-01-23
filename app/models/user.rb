@@ -6,7 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :carts
 
-  def current_cart
-    self.carts.last
-  end
+  belongs_to :current_cart, class_name: 'Cart', foreign_key: 'cart_id'
 end
