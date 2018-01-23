@@ -1,5 +1,40 @@
+# MODELS
+
+## CART
+X belongs to a user
+X has many line_items
+X has many items through line_items
+X #total: total price of items in cart
+- #add_item(item.id): updates existing line_item instead of making new when adding same item, or creates a new unsaved line_item 
+
+## CATEGORY
+X has many items
+
+## ITEM
+X title, inventory, price, category_id
+X belongs to a category
+X has many line_items consolidated by line_item quantity
+- #available_items: only returns items with inventory > 0
+
+## LineItem
+X belongs to a cart
+X belongs to an item
+X has a quantity, default 1
+
+## USER
+X has many carts
+- has #current_cart
+
+#CRUD
+
+CATEGORY: index
+- displays all of the categories as links
+
+ITEMS: index
+- displays all items that have inventory
+
 # USERS
-Have just an email and password
+X Have just an email and password
 Should be able to log in and log out
 Also sign up
 Note: You must use the Devise gem to set up user for tests to pass.
@@ -17,7 +52,9 @@ Prices should be in the $XX.XX format
 The Checkout process should set that current cart to a status of "submitted"
 
 # HEADERS/NAV
-Users should know who they are logged in as
+Users should know who they are logged in as ("Signed in as #{@user.email}")
 Users should be able to sign in/out from the navigation bar
-Users should always be able to go "home"
+Users should always be able to go to "Store Home"
 If the user has a current cart, there should be a "Cart" link to their current cart
+- if not logged in, does not display "Add To Cart" button
+- if logged in: ,  has "Sign out"
