@@ -1,6 +1,6 @@
-<% if @current_user %>
-  <% "Signed in as #{@user.email}" %>
-<% end %>
+<% if current_user %>
+  <%= "Signed in as #{current_user.email}" %>
+<% end %><br>
 
 <% @categories.each do |category| %>
   <%= link_to category.title, category_path(category) %>
