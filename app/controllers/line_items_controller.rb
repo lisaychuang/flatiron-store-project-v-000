@@ -2,8 +2,8 @@ class LineItemsController < ApplicationController
     def create
         # check if there is a current_cart
         # if not, create a cart
-        
-        if current_user.current_cart.nil?
+        @cart = current_user.current_cart
+        if @cart.nil?
             @cart = current_user.carts.create
         end
         current_user.current_cart = @cart
