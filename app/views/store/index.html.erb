@@ -7,7 +7,7 @@
 <% end %>
 
 <% @items.each do |item| %>
-  <p><%= item.title %> | <%= number_to_currency(item.price/100.0) %> | 
+  <p><%= item.title %> | <%= number_to_currency(item.price/100.0) %> | <%= "Available: #{item.inventory}" %>
   
   <% if signed_in? %>
   <%= button_to 'Add to Cart', line_items_path(item_id: item) %></p>

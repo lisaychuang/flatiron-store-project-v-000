@@ -23,15 +23,15 @@ X has a quantity, default 1
 
 ## USER
 X has many carts
-- has #current_cart
+X has #current_cart
 
 #CRUD
 
 CATEGORY: index
-- displays all of the categories as links
+X displays all of the categories as links
 
 ITEMS: index
-- displays all items that have inventory
+X displays all items that have inventory
 
 # USERS
 X Have just an email and password
